@@ -1,10 +1,10 @@
-package timetabling.src.timetabling;
+package timetabling;
 
 import java.util.Scanner;
 
 import javax.swing.UIManager;
 
-import timetabling.src.timetabling.container.Window;
+import timetabling.container.Window;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;

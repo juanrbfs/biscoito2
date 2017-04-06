@@ -1,4 +1,4 @@
-package timetabling.src.timetabling.container;
+package timetabling.container;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

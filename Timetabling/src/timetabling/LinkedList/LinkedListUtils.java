@@ -1,4 +1,4 @@
-package src.timetabling.LinkedList;
+package timetabling.LinkedList;
 
 public class LinkedListUtils {
 	  public void insertElement(Object elemento) {}

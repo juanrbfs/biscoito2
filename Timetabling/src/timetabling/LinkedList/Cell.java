@@ -1,4 +1,4 @@
-package src.timetabling.LinkedList;
+package timetabling.LinkedList;
 
 //estrutura de registro de uma lista encadeada
 public class Cell {
