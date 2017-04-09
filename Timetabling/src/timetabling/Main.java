@@ -27,15 +27,15 @@ public class Main {
         frame.setVisible(true);
     }
 	
-	 public static void main(String[] args) {
-		 
-	        //creating and showing this application's GUI.
-	        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-	            public void run() {
-	            	UIManager.put("swing.boldMetal", Boolean.FALSE);
-	            	createAndShowGUI();
-	                 
-	            }
-	        });
-	 }
+//	 public static void main(String[] args) {
+//		 
+//	        //creating and showing this application's GUI.
+//	        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+//	            public void run() {
+//	            	UIManager.put("swing.boldMetal", Boolean.FALSE);
+//	            	createAndShowGUI();
+//	                 
+//	            }
+//	        });
+//	 }
 }

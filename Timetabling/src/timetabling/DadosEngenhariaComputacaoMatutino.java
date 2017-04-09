@@ -11,7 +11,6 @@ package timetabling;
  */
 
 //Usado para Testes enquanto a parte do leitura de arquivos nao estiver pronta, 
-//não sei ,ve o que faz com isso aqui , sei la tava atoa no dia :)
 //Fazer Teste com apenas uma turma para testar o algoritmo
 //sem restrição de aulunos e professores apenas disciplinas e choque de salas e quantidade
 public class DadosEngenhariaComputacaoMatutino {
@@ -225,7 +224,7 @@ public class DadosEngenhariaComputacaoMatutino {
     public static int CHSP_ALGORITMOS_PROGRAMACAO_1                       = 32;
     public static int CHSP_CALCULO_1                                      = 0;
     public static int CHSP_QUIMICA_GERAL                                  = 0;
-    public static int CHSP_QUIMICA_GERAL_EXPERIMENTAL                     = 0;
+    public static int CHSP_QUIMICA_GERAL_EXPERIMENTAL                     = 32;
     public static int CHSP_INTRODUCAO_ENGENHARIA_COMPUTACAO               = 0;
     public static int CHSP_FUNDAMENTOS_LOGICA                             = 0;
     public static int CHSP_CALCULO_2                                      = 0;
@@ -1170,7 +1169,8 @@ public class DadosEngenhariaComputacaoMatutino {
     
     //Retorna quantidade de bloco para cada disciplina por mês
     public static int getClassCHSBlockPerMonth(int data){
-        
+        if(CONSTANTS.CHS_96 == data)
+            return 12;
         if(CONSTANTS.CHS_64 == data)
             return 8;
         if(CONSTANTS.CHS_48 == data)
@@ -1186,6 +1186,8 @@ public class DadosEngenhariaComputacaoMatutino {
     //Retorna quantidade de meses para uma disciplina dependendo da carga horaria
     public static int getClassMonths(int data){
         
+        if(CONSTANTS.CHS_96 == data)
+            return 4;
         if(CONSTANTS.CHS_64 == data)
             return 4;
         if(CONSTANTS.CHS_48 == data)

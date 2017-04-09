@@ -19,9 +19,7 @@ public class Gene {
     private Object _class[][];
     private int column;
     private int line;
-    
-    Gene(){}
-    
+   
     Gene(int corse,int period){
         this.course = corse;
         this.period = period;
@@ -50,16 +48,15 @@ public class Gene {
             line = 3;
         }
         
-        
-        _class[1][1] = createClass();
+       
     }
     
-    public int getPeriodNumber(int data){
+    public static int getPeriodNumber(int data){
         return data%4;
     }
     
     
-    public int getPeriod(int data){
+    public static int getPeriod(int data){
         
         if(data%4 == 0)
           return data/4;
@@ -113,7 +110,7 @@ public class Gene {
         return new int[6];
     }
     
-    public void printClass(int line,int column){
+    public static void printClass(Object _class[][],int line,int column){
        
         for (int i = 0; i < line; i++) {
             for (int j = 0; j < column; j++) {
@@ -125,7 +122,25 @@ public class Gene {
                     System.out.print("|");
                 }
                 else{
-                    System.out.print("null|");
+                    System.out.print("  -  |");
+                }
+                    
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void printClassSIGLA(Object _class[][],int line,int column){
+       
+        for (int i = 0; i < line; i++) {
+            for (int j = 0; j < column; j++) {
+                if(_class[i][j] != null){
+                    int array[] =  (int[]) _class[i][j];
+                    System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(array[0]));
+                    System.out.print("|");
+                }
+                else{
+                    System.out.print("  -  |");
                 }
                     
             }

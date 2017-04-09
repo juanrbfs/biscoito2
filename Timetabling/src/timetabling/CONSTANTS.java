@@ -27,9 +27,12 @@ public class CONSTANTS {
      public static int THEORY_PRACTICE                 = 2;
      
     //carga horaria de aula
+     public static int CHS_96                          = 96;
      public static int CHS_64                          = 64;
      public static int CHS_48                          = 48;
      public static int CHS_32                          = 32;
      public static int CHS_16                          = 16;
+     
+     
     
 }
