@@ -26,7 +26,5 @@ public class Teste {
             
            // individual.printIndividual(individual);         //imprime horario apenas mostrando as Siglas
             Individual.printAllInfoIndividual(individual); //imprime horario  mostrando todas as informações
-           
-
 	 }
 }

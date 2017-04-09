@@ -9,6 +9,7 @@ package timetabling;
  *
  * @author 
  */
+
 public class Gene {
 
     private int course;
@@ -19,9 +20,10 @@ public class Gene {
     private Object _class[][];
     private int column;
     private int line;
-   
-    Gene(int corse,int period){
-        this.course = corse;
+
+    //construtor cria um gene dado o codigo do curso e o periodo que esse curso e realizado
+    Gene(int course,int period){
+        this.course = course;
         this.period = period;
         
         if(period == CONSTANTS.MORNING){
@@ -47,15 +49,14 @@ public class Gene {
             column = 5;
             line = 3;
         }
-        
-       
     }
     
+    //????
     public static int getPeriodNumber(int data){
         return data%4;
     }
     
-    
+    //???
     public static int getPeriod(int data){
         
         if(data%4 == 0)
@@ -105,11 +106,8 @@ public class Gene {
     public void setClass(Object[][] _class) {
         this._class = _class;
     }
-    
-    public int[] createClass() {
-        return new int[6];
-    }
-    
+     
+    //imprime uma matriz de horarios mostrando todos os dados no codigo
     public static void printClass(Object _class[][],int line,int column){
        
         for (int i = 0; i < line; i++) {
@@ -130,6 +128,7 @@ public class Gene {
         }
     }
     
+        //imprime a sigla do no Gene gerando uma matriz de horario
     public static void printClassSIGLA(Object _class[][],int line,int column){
        
         for (int i = 0; i < line; i++) {
@@ -148,6 +147,7 @@ public class Gene {
         }
     }
     
+    //imprime todos os dados no Gene
     public static void printClassAll(Object _class[][],int line,int column){
        
         for (int i = 0; i < line; i++) {
@@ -189,7 +189,7 @@ public class Gene {
             System.out.println();
         }
     }
-
+    
     /**
      * @return the column
      */

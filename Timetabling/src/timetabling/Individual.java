@@ -13,9 +13,11 @@ public class Individual {
     private int  fitness      = 0;
     private int listCourses[];
   
-    //tamanho do vetor de inteiros é igual a 4 
-    //implementado para os cursos de ECM, ECN, EE,EM
-    public Individual(int[] courses) {
+   //tamanho do vetor de inteiros é igual a 4 
+   //implementado para os cursos de ECM, ECN, EE,EM
+    //Construtor Gerado um individuo
+    Individual(){}
+    Individual(int[] courses) {
         listCourses = new int[4];
         int numGenes = 0;
         int months =0;
@@ -108,17 +110,26 @@ public class Individual {
         processFitness();       
       
     }
-    
+
+    /**
+     * @return Retorna o valor da função fitness do indivíduo. 
+     */
     public int getFitness() {
-        return 0;
+        return fitness;
     }
    
-    public String getGenes() {
-        return "";
+    /*
+     * @return    Retorna o cromossomo atual.
+     */
+    public Gene[] getGenes() {
+        return chromosome;
     }
-
+    
+    // Metodo....: processFitness                           
+    // Objetivo..: Calcula o valor da função fitness do indivíduo a partir da configuração atual de seus cromossomos.    
     private void processFitness() {
-       
+        //do something
+       fitness = 0;
     }
     
     //Metodo que gera uma turma 
