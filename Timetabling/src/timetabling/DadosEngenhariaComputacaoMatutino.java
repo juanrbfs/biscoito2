@@ -1169,6 +1169,7 @@ public class DadosEngenhariaComputacaoMatutino {
     
     //Retorna quantidade de bloco para cada disciplina por mês
     public static int getClassCHSBlockPerMonth(int data){
+   
         if(CONSTANTS.CHS_96 == data)
             return 12;
         if(CONSTANTS.CHS_64 == data)

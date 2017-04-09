@@ -20,7 +20,7 @@ public class Individual {
         int numGenes = 0;
         int months =0;
         int lengthPeriods = 1; //contador do numero de periodos
-        int n=0; //contador do cromossomo
+        int n=0; //contador do cromossomo variavel auxiliar para setar o gene no cromossomo
         
         //preecher lista  para guardar a ordem dos cursos
         //e inicializar o tamanho do individuo
@@ -72,44 +72,26 @@ public class Individual {
                int twelfthPeriod[] = DadosEngenhariaComputacaoMatutino.getTwelfthPeriod();
                
                Object vector[] = {firstPeriod,secondPeriod,thirdPeriod,fouthPeriod,fifthPeriod,sixthPeriod,seventhPeriod,eighthPeriod,ninthPeriod,tenthPeriod,eleventhPeriod,twelfthPeriod} ;
-               //variavel auxiliar para setar o gene no cromossomo
-                
-                //for (int j = 0; j < vector.length; j++) {//percorre o array de periodos
+               
+                for (int j = 0; j < vector.length; j++) {//percorre o array de periodos
                     
-                //    int array[]= (int[]) vector[j]; // pegar o vetor de disciplinas em um periodo
-                   int array[]= (int[]) vector[0];  
-                    //for (int k = 0; k < months; k++) {//percorre a quantidade de meses em um semestre
+                    int array[]= (int[]) vector[j]; // pegar o vetor de disciplinas em um periodo
+                  // int array[]= (int[]) vector[0];                   
+                    List<List<int[]>> list =  processClassesEngenhariaComputacaoMatutino(array,lengthPeriods);
                        
-                        Gene gene =  new Gene(CONSTANTS.ENGENHARIA_COMPUTACAO_MATUTINO,CONSTANTS.MORNING); //criar um Gene
-                        Object _class[][] = gene._getClass(); //Obter a matriz de horarios
-                        
-                       List<Object> list =  processClassesEngenhariaComputacaoMatutino(array,lengthPeriods);
-                        System.out.println("List:"+ list.size());
-                       
-                        for (int k = 0; k < list.size(); k++) {
-                           
-                            Object obj[] = (Object[]) list.get(k);
-                            //criar turma
-                           
-                            for (int l = 0; l < obj.length; l++) {
-                               addClass(_class,gene.getLine(),gene.getColumn(),(int []) obj[l] );//adicionar turma na matriz de horarios
-                           }
+                        for (int k = 0; k < list.size(); k++) { 
+                             Gene gene =  new Gene(CONSTANTS.ENGENHARIA_COMPUTACAO_MATUTINO,CONSTANTS.MORNING); //criar um Gene
+                             Object _class[][] = gene._getClass(); //Obter a matriz de horarios
+                            for (int l = 0; l < list.get(k).size(); l++) {
+                                int obj[] = (int[]) list.get(k).get(l);
+                                addClass(_class,gene.getLine(),gene.getColumn(),obj );//adicionar turma na matriz de horarios
+                            }
                             
-                           
-                         }
-                        
-//                        for (int l = 0; l < array.length; l++) { //percorrer o vetor de disciplinas
-//                           // System.out.println(array[l]);
-//                            //criar turma
-//                            addClass(_class,gene.getLine(),gene.getColumn(), processClass(array[l], lengthPeriods));//adicionar turma na matriz de horarios
-//                        } 
-                            
-                        chromosome[n] = gene; //adicionar gene no cromossomo
-                        n++; //incrementar o contador do cromossomo
-                        lengthPeriods++; //incrementar o contador de periodos
-                   //}  
-                 //  break;
-               // }   
+                             chromosome[n] = gene; 
+                             n++; //incrementar o contador do cromossomo
+                             lengthPeriods++; //incrementar o contador de periodos
+                        }
+                }   
             }
             if(listCourses[i] == CONSTANTS.ENGENHARIA_COMPUTACAO_NOTURNO ){
                //IMPLEMENTAR
@@ -146,20 +128,26 @@ public class Individual {
        
         int cell[] = new int[6];
        
-        //turma 0-codigo;1 - professor;2 - periodo;3 - carga horaria; 4 - sala;                  
-        cell[0] = _class;
-        cell[1] = 0;//implementar
-        cell[2] = period;
-        cell[3] = DadosEngenhariaComputacaoMatutino.getClassCHS(_class);
-        cell[4] = 0;//;//sala implementar
-        cell[5] = 0;//implementar                      
+        //0-codigo;
+        //1 - professor
+        //2 - periodo
+        //3 - carga horaria;
+        //4 - tipo sala;
+        //4 - sala;
+        
+        cell[0] = _class;//codigo disciplina
+        cell[1] = 0;//implementar professor
+        cell[2] = period;//periodo
+        cell[3] = DadosEngenhariaComputacaoMatutino.getClassCHS(_class);//carga Horaria
+        cell[4] = typeClassroom;//Tipo sala
+        cell[5] = 0;//sala //implementar                     
         
         return cell;
     }
     
     //Metodo que gera uma turma 
     //retornando uma turma dado um vetor de disciplinas
-    private List<Object> processClassesEngenhariaComputacaoMatutino(int _classes[],int periodo){
+    private List<List<int[]>> processClassesEngenhariaComputacaoMatutino(int _classes[],int periodo){
         
         List<List<int[]>> list = new ArrayList<List<int[]>>(); //lista de 4 posiçoes cada posção 1 mes de um periodo
                                                                // de uma lista de turmas
@@ -181,8 +169,8 @@ public class Individual {
                 int quantity = DadosEngenhariaComputacaoMatutino.getClassCHSBlockPerMonth(chs); // quantidade de blocos de aula por mês
                 int typeClassroom = CONSTANTS.THEORY;
                
-                System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(aux));
-                System.out.println(" t:"+quantity);
+               // System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(aux));
+              //  System.out.println(" t:"+quantity);
                if(quantity == 12){ // 3 aulas por semana
                     for (int j = 0; j < 4; j++) { //cada mês recebe três turmas da disciplina  
                         list.get(j).add(processClass(aux,periodo,typeClassroom));
@@ -219,12 +207,12 @@ public class Individual {
                 } 
             }
             else if(type == CONSTANTS.PRACTICE){
-                System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(aux));
+               
                 int chsp = DadosEngenhariaComputacaoMatutino.getClassCHSPractice(aux);
                 int quantity = DadosEngenhariaComputacaoMatutino.getClassCHSBlockPerMonth(chsp);
                 int typeClassroom = CONSTANTS.PRACTICE;
-                 
-                System.out.println(" p:"+quantity);
+                //System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(aux)); 
+                //System.out.println(" p:"+quantity);
               if(quantity == 12){ // 3 aulas por semana
                for (int j = 0; j < 4; j++) { //cada mês recebe três turmas da disciplina  
                         list.get(j).add(processClass(aux,periodo,typeClassroom));
@@ -262,7 +250,7 @@ public class Individual {
             }
             
             else if( type == CONSTANTS.THEORY_PRACTICE){
-                System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(aux));
+               // System.out.print(DadosEngenhariaComputacaoMatutino.getClassLabel(aux));
                 int chsp = DadosEngenhariaComputacaoMatutino.getClassCHSPractice(aux);
                 int chst = DadosEngenhariaComputacaoMatutino.getClassCHSTheory(aux);
                 int quantityTheory = DadosEngenhariaComputacaoMatutino.getClassCHSBlockPerMonth(chst);
@@ -271,8 +259,8 @@ public class Individual {
                 
                 int typeClassroom1 = CONSTANTS.THEORY;
                 int typeClassroom2 = CONSTANTS.PRACTICE;
-                System.out.print(" t:"+quantityTheory);
-                System.out.println(" p:"+quantityPractice);
+               // System.out.print(" t:"+quantityTheory);
+               // System.out.println(" p:"+quantityPractice);
                 if(quantityTheory == 8){
                     for (int j = 0; j < 4; j++) {    
                         list.get(j).add(processClass(aux,periodo,typeClassroom1));
@@ -331,32 +319,17 @@ public class Individual {
             }
   
         }
+//Debugar a lista de saida       
+//        for (int k = 0; k < list.size(); k++) {        
+//             System.out.println("SIZE"+k+":" + list.get(k).size()); 
+//            
+//            for (int i = 0; i < list.get(k).size(); i++) {
+//                int a[] = (int[])list.get(k).get(i);
+//                System.out.println(DadosEngenhariaComputacaoMatutino.getClassLabel(a[0]));
+//            }
+//        }
         
-        //Transformar em lista de objetos
-        List<Object> retorno= new ArrayList<Object>();
-        
-        for (int k = 0; k < 4; k++) {        
-            for (int i = 0; i < list.get(k).size(); i++) {
-                int tamanho = list.get(k).size();
-                Object  aux[] = new Object[tamanho];
-        
-                for (int j = 0; j < tamanho; j++) {
-                    
-                    aux[j] =(int []) list.get(k).get(j);
-                    int aux2[] = (int [])aux[j];
-                   System.out.println(DadosEngenhariaComputacaoMatutino.getClassLabel(aux2[0]));
-//                    int aux2[] = (int [])aux[j];
-                    
-//                    for (int l = 0; l < aux2.length; l++) {
-//                        System.out.print(aux2[l]);
-//                    }                
-                }
-                
-                retorno.add(aux);
-            }
-        }
-        
-        return retorno;
+        return list;
     }
     
     //metodo para setar uma valor na matriz de disciplinas
@@ -388,6 +361,23 @@ public class Individual {
            if(i<chromosome.length -1) {
             System.out.println((i+2)+":"+"____________________________________________");
             System.out.println("SEG  |TER  |QUA  |QUI  |SEX  |SAB  |");
+           }
+        }
+    }
+    
+    public static void printAllInfoIndividual(Individual individual){
+       Gene chromosome[] = individual.chromosome;
+            System.out.println(1+":"+"_______________________________________________________________________________________________________________________________________________________________");
+            System.out.println("SEG                       |TER                       |QUA                       |QUI                       |SEX                       |SAB                       |");
+       
+       for (int i = 0; i < chromosome.length; i++) {
+           Gene gene = chromosome[i];
+           Gene.printClassAll(gene._getClass(),gene.getLine(),gene.getColumn());
+           System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+           
+           if(i<chromosome.length -1) {
+            System.out.println((i+2)+":"+"_______________________________________________________________________________________________________________________________________________________________");
+            System.out.println("SEG                       |TER                       |QUA                       |QUI                       |SEX                       |SAB                       |");
            }
         }
     }

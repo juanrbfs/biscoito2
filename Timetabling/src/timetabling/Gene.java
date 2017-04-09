@@ -147,6 +147,48 @@ public class Gene {
             System.out.println();
         }
     }
+    
+    public static void printClassAll(Object _class[][],int line,int column){
+       
+        for (int i = 0; i < line; i++) {
+            for (int j = 0; j < column; j++) {
+                if(_class[i][j] != null){
+                    int array[] =  (int[]) _class[i][j];
+                    String label = DadosEngenhariaComputacaoMatutino.getClassLabel(array[0]).trim();
+                    int lengthLabel = label.length();
+                    
+                    while(label.length() <6)
+                        label = label+" ";
+                    
+                    System.out.print(label);//Label disciplina
+                    System.out.print("????? ");//professor
+                    String periodo = "";
+                    if(array[2] < 10)
+                        periodo = "0"+array[2];
+                    else if(array[2] < 99)
+                        periodo = ""+array[2];
+                    
+                    System.out.print(periodo+" ");//periodo
+                    System.out.print(array[3]+" ");//Carga Horaria
+                    System.out.print(CONSTANTS.getNameTypeClass(array[4])+" ");//Tipo de Sala
+                    String sala = "";
+                     if(array[5] < 10)
+                        sala = "00"+array[5];
+                     else if(array[5] < 100)
+                        sala = "0"+array[5];
+                     else
+                         sala = "0"+array[5];
+                    System.out.print(" "+sala);// Sala
+                    System.out.print("|");
+                }
+                else{
+                    System.out.print("            -             |");
+                }
+                    
+            }
+            System.out.println();
+        }
+    }
 
     /**
      * @return the column

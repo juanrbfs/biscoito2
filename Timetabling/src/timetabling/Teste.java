@@ -24,7 +24,8 @@ public class Teste {
             int courses[] = {CONSTANTS.ENGENHARIA_COMPUTACAO_MATUTINO,CONSTANTS.ENGENHARIA_COMPUTACAO_NOTURNO,CONSTANTS.ENGENHARIA_ELETRICA,CONSTANTS.ENGENHARIA_MECANICA};
             Individual individual = new Individual(courses);
             
-            //Individual.printIndividual(individual);
+           // individual.printIndividual(individual);         //imprime horario apenas mostrando as Siglas
+            Individual.printAllInfoIndividual(individual); //imprime horario  mostrando todas as informações
            
 
 	 }

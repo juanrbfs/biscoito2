@@ -5,6 +5,9 @@
  */
 package timetabling;
 
+import static timetabling.DadosEngenhariaComputacaoMatutino.getClassCHSPractice;
+import static timetabling.DadosEngenhariaComputacaoMatutino.getClassCHSTheory;
+
 /**
  *
  * @author HOME
@@ -34,5 +37,14 @@ public class CONSTANTS {
      public static int CHS_16                          = 16;
      
      
-    
+    //Retorna tipo de turma se ela e apenas teorica, pratica ou ambos
+    public static String getNameTypeClass(int data){
+   
+        if(THEORY == data)
+            return "SL ";
+        else if(PRACTICE == data)
+            return "LAB";
+        
+        return null;
+    }
 }
