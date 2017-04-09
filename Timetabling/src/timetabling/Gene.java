@@ -7,53 +7,78 @@ package timetabling;
 
 /**
  *
- * @author HugoEduardo
+ * @author 
  */
 public class Gene {
-    
-    public static int MORNING = 1;
-    public static int AFTERNOON = 2;
-    public static int MORNING_AFTERNOON = 3;
-    public static int EVENING = 4;
-    
-    private int corse;
+
+    private int course;
+    //Periodo vai de 1 - 48
+    //1 periodo tem 4 meses ( 4 estruturas para um mesmo periodo)
     private int period;
     //Objeto de vetores de interios
     private Object _class[][];
+    private int column;
+    private int line;
     
     Gene(){}
     
     Gene(int corse,int period){
-        this.corse = corse;
+        this.course = corse;
         this.period = period;
         
-        if(period == MORNING)
+        if(period == CONSTANTS.MORNING){
             _class = new Object[3][5];
+            column = 5;
+            line = 3;
+        }
         
-        else if(period == AFTERNOON)
+        else if(period == CONSTANTS.AFTERNOON){
             _class = new Object[2][5];
+            column = 5;
+            line = 2;   
+        }
         
-        else if(period == MORNING_AFTERNOON)
+        else if(period == CONSTANTS.MORNING_AFTERNOON){
             _class = new Object[5][5];
+            column = 5;
+            line = 5;
+        }
      
-        else if(period == EVENING)
+        else if(period == CONSTANTS.EVENING){
             _class = new Object[3][5];
+            column = 5;
+            line = 3;
+        }
+        
         
         _class[1][1] = createClass();
     }
     
+    public int getPeriodNumber(int data){
+        return data%4;
+    }
+    
+    
+    public int getPeriod(int data){
+        
+        if(data%4 == 0)
+          return data/4;
+        
+        return (data/4) +1;
+    }
+    
     /**
-     * @return the corse
+     * @return the course
      */
-    public int getCorse() {
-        return corse;
+    public int getCourse() {
+        return course;
     }
 
     /**
-     * @param corse the corse to set
+     * @param course the corse to set
      */
-    public void setCorse(int corse) {
-        this.corse = corse;
+    public void setCourse(int course) {
+        this.course = course;
     }
 
     /**
@@ -86,5 +111,39 @@ public class Gene {
     
     public int[] createClass() {
         return new int[6];
+    }
+    
+    public void printClass(int line,int column){
+       
+        for (int i = 0; i < line; i++) {
+            for (int j = 0; j < column; j++) {
+                if(_class[i][j] != null){
+                    int array[] =  (int[]) _class[i][j];
+                    for (int k = 0; k < array.length; k++) {
+                        System.out.print(array[k]);
+                    }
+                    System.out.print("|");
+                }
+                else{
+                    System.out.print("null|");
+                }
+                    
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * @return the column
+     */
+    public int getColumn() {
+        return column;
+    }
+
+    /**
+     * @return the line
+     */
+    public int getLine() {
+        return line;
     }
 }
