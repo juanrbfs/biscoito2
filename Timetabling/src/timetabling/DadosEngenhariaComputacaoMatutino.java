@@ -11,14 +11,15 @@ package timetabling;
  */
 
 //Usado para Testes enquanto a parte do leitura de arquivos nao estiver pronta, 
-//Fazer Teste com apenas uma turma para testar o algoritmo
+//Fazer Teste com apenas um curso para testar o algoritmo
 //sem restrição de aulunos e professores apenas disciplinas e choque de salas e quantidade
+
 public class DadosEngenhariaComputacaoMatutino {
     
      public static String COURSE_LABEL                          = "ECM";
      public static int COURSE_CODE                              = 1;
      public static int COURSE_PERIODS                           = 12;//periodos do curso
-      public static int MONTHS                                  = 4;//meses para um semestre
+     public static int MONTHS                                  = 4;//meses para um semestre
        
     //Quantidade de salas disponiveis
     //Cada sala e seguida da sequencia numerica
@@ -115,28 +116,28 @@ public class DadosEngenhariaComputacaoMatutino {
     public static int CHS_METODOS_MATEMATICOS_LINEARES                   = 64;
     public static int CHS_BANCO_DADOS_1                                  = 64;
     public static int CHS_CIRCUITOS_ELETRICOS_1                          = 64;
-    public static int CHS_LABORATORIO_CIRCUITOS_ELETRICOS                = 16;
+    public static int CHS_LABORATORIO_CIRCUITOS_ELETRICOS                = 32;
     public static int CHS_ANALISE_SISTEMAS_LINEARES                      = 64;
     public static int CHS_MATERIAIS_ELETRICOS                            = 64;
-    public static int CHS_LABORATORIO_MATERIAIS_ELETRICOS                = 16;
+    public static int CHS_LABORATORIO_MATERIAIS_ELETRICOS                = 32;
     public static int CHS_PROBABILIDADE_ESTATISTICA                      = 64;
     public static int CHS_SISTEMA_CONTROLE                               = 64;
     public static int CHS_CONVERSAO_ELETROMECANICA_ENERGIA_1             = 64;
-    public static int CHS_LABORATORIO_CONVERSAO_ELETROMECANICA_ENERGIA_1 = 16;
+    public static int CHS_LABORATORIO_CONVERSAO_ELETROMECANICA_ENERGIA_1 = 32;
     public static int CHS_ELETRONICA_1                                   = 64;
-    public static int CHS_LABORATORIO_ELETRONICA                         = 16;
+    public static int CHS_LABORATORIO_ELETRONICA                         = 32;
     public static int CHS_CALCULO_NUMERICO                               = 64;
     public static int CHS_FENOMENOS_TRANSPORTE                           = 64;
     public static int CHS_MECANICA                                       = 64;
-    public static int CHS_LABORATORIO_SISTEMA_CONTROLE                   = 16;
+    public static int CHS_LABORATORIO_SISTEMA_CONTROLE                   = 32;
     public static int CHS_CIRCUITOS_LOGICOS_1                            = 64;
-    public static int CHS_LABORATORIO_CIRCUITOS_LOGICOS_1                = 16;
+    public static int CHS_LABORATORIO_CIRCUITOS_LOGICOS_1                = 32;
     public static int CHS_SISTEMAS_OPERACIONAIS                          = 64;
     public static int CHS_RESISTENCIA_MATERIAIS_1                        = 64;
     public static int CHS_METODOLOGIA_CIENTIFICA                         = 32;
     public static int CHS_TEORIA_TELECOMUNICACOES                        = 64;
     public static int CHS_MICROPROCESSADORES_MICROCONTROLADORES          = 64;
-    public static int CHS_LABORATORIO_MICROPROCESSADORES_MICROCONTROLADORES = 16;  
+    public static int CHS_LABORATORIO_MICROPROCESSADORES_MICROCONTROLADORES = 32;  
     public static int CHS_SISTEMAS_DISTIBUIDOS_1                         = 64;
     public static int CHS_LINGUAGENS_FORMAIS                             = 32;
     public static int CHS_DIREITO_ENGENHARIA                             = 32;
@@ -167,18 +168,18 @@ public class DadosEngenhariaComputacaoMatutino {
     public static int CHST_ALGORITMOS_PROGRAMACAO_2                       = 32;
     public static int CHST_FISICA_1                                       = 64;
     public static int CHST_LABORATORIO_FISICA_1                           = 0;
-    public static int CHST_ESTRUTURA_DADOS_1                              = 48;
+    public static int CHST_ESTRUTURA_DADOS_1                              = 32;
     public static int CHST_EQUACOES_DIFERENCIAS                           = 64;
     public static int CHST_CALCULO_3                                      = 64;
     public static int CHST_MATEMATICA_DISCRETA                            = 64;
     public static int CHST_FISICA_3                                       = 64;
-    public static int CHST_ESTRUTURA_DADOS_2                              = 48;
+    public static int CHST_ESTRUTURA_DADOS_2                              = 32;
     public static int CHST_FISICA_4                                       = 64;
     public static int CHST_LABORATORIO_FISICA_4                           = 0;
     public static int CHST_ELETROMAGNETISMO                               = 64;
     public static int CHST_DESENHO_TECNICO                                = 32;
     public static int CHST_METODOS_MATEMATICOS_LINEARES                   = 64;
-    public static int CHST_BANCO_DADOS_1                                  = 48;
+    public static int CHST_BANCO_DADOS_1                                  = 32;
     public static int CHST_CIRCUITOS_ELETRICOS_1                          = 64;
     public static int CHST_LABORATORIO_CIRCUITOS_ELETRICOS                = 0;
     public static int CHST_ANALISE_SISTEMAS_LINEARES                      = 64;
@@ -196,7 +197,7 @@ public class DadosEngenhariaComputacaoMatutino {
     public static int CHST_LABORATORIO_SISTEMA_CONTROLE                   = 0;
     public static int CHST_CIRCUITOS_LOGICOS_1                            = 64;
     public static int CHST_LABORATORIO_CIRCUITOS_LOGICOS_1                = 0;
-    public static int CHST_SISTEMAS_OPERACIONAIS                          = 48;
+    public static int CHST_SISTEMAS_OPERACIONAIS                          = 32;
     public static int CHST_RESISTENCIA_MATERIAIS_1                        = 64;
     public static int CHST_METODOLOGIA_CIENTIFICA                         = 32;
     public static int CHST_TEORIA_TELECOMUNICACOES                        = 64;
@@ -206,15 +207,15 @@ public class DadosEngenhariaComputacaoMatutino {
     public static int CHST_LINGUAGENS_FORMAIS                             = 32;
     public static int CHST_DIREITO_ENGENHARIA                             = 32;
     public static int CHST_CIENCIAS_AMBIENTE                              = 64;
-    public static int CHST_REDES_COMPUTADORES_1                           = 48;
+    public static int CHST_REDES_COMPUTADORES_1                           = 32;
     public static int CHST_ARQUITETURA_COMPUTADORES_1                     = 64;  
-    public static int CHST_COMPILADORES_1                                 = 48;
-    public static int CHST_INTELIGENCIA_COMPUTACIONAL                     = 48;
-    public static int CHST_ENGENHARIA_SOFTWARE_1                          = 48;
+    public static int CHST_COMPILADORES_1                                 = 32;
+    public static int CHST_INTELIGENCIA_COMPUTACIONAL                     = 32;
+    public static int CHST_ENGENHARIA_SOFTWARE_1                          = 32;
     public static int CHST_ADIMINISTRACAO_EMPRESARIAL                     = 32;
     public static int CHST_ECONOMIA                                       = 32;
     public static int CHST_PEQUISA_OPERACIONAL_1                          = 32; 
-    public static int CHST_COMPUTACAO_GRAFICA                             = 48;
+    public static int CHST_COMPUTACAO_GRAFICA                             = 32;
     public static int CHST_ENGENHARIA_ECONOMICA                           = 64;
     public static int CHST_PROJETO_FINAL_CURSO_1                          = 0;
     public static int CHST_ESTAGIO_SUPERSIONADO                           = 0;
@@ -232,54 +233,54 @@ public class DadosEngenhariaComputacaoMatutino {
     public static int CHSP_ALGORITMOS_PROGRAMACAO_2                       = 32;
     public static int CHSP_FISICA_1                                       = 0;
     public static int CHSP_LABORATORIO_FISICA_1                           = 32;
-    public static int CHSP_ESTRUTURA_DADOS_1                              = 16;
+    public static int CHSP_ESTRUTURA_DADOS_1                              = 32;
     public static int CHSP_EQUACOES_DIFERENCIAS                           = 0;
     public static int CHSP_CALCULO_3                                      = 0;
     public static int CHSP_MATEMATICA_DISCRETA                            = 0;
     public static int CHSP_FISICA_3                                       = 0;
-    public static int CHSP_ESTRUTURA_DADOS_2                              = 16;
+    public static int CHSP_ESTRUTURA_DADOS_2                              = 32;
     public static int CHSP_FISICA_4                                       = 0;
     public static int CHSP_LABORATORIO_FISICA_4                           = 32;
     public static int CHSP_ELETROMAGNETISMO                               = 0;
     public static int CHSP_DESENHO_TECNICO                                = 0;
     public static int CHSP_METODOS_MATEMATICOS_LINEARES                   = 0;
-    public static int CHSP_BANCO_DADOS_1                                  = 16;
+    public static int CHSP_BANCO_DADOS_1                                  = 32;
     public static int CHSP_CIRCUITOS_ELETRICOS_1                          = 0;
-    public static int CHSP_LABORATORIO_CIRCUITOS_ELETRICOS                = 16;
+    public static int CHSP_LABORATORIO_CIRCUITOS_ELETRICOS                = 32;
     public static int CHSP_ANALISE_SISTEMAS_LINEARES                      = 0;
     public static int CHSP_MATERIAIS_ELETRICOS                            = 0;
-    public static int CHSP_LABORATORIO_MATERIAIS_ELETRICOS                = 16;
+    public static int CHSP_LABORATORIO_MATERIAIS_ELETRICOS                = 32;
     public static int CHSP_PROBABILIDADE_ESTATISTICA                      = 0;
     public static int CHSP_SISTEMA_CONTROLE                               = 0;
     public static int CHSP_CONVERSAO_ELETROMECANICA_ENERGIA_1             = 0;
-    public static int CHSP_LABORATORIO_CONVERSAO_ELETROMECANICA_ENERGIA_1 = 16;
+    public static int CHSP_LABORATORIO_CONVERSAO_ELETROMECANICA_ENERGIA_1 = 32;
     public static int CHSP_ELETRONICA_1                                   = 0;
-    public static int CHSP_LABORATORIO_ELETRONICA                         = 16;
+    public static int CHSP_LABORATORIO_ELETRONICA                         = 32;
     public static int CHSP_CALCULO_NUMERICO                               = 32;
     public static int CHSP_FENOMENOS_TRANSPORTE                           = 0;
     public static int CHSP_MECANICA                                       = 0;
-    public static int CHSP_LABORATORIO_SISTEMA_CONTROLE                   = 16;
+    public static int CHSP_LABORATORIO_SISTEMA_CONTROLE                   = 32;
     public static int CHSP_CIRCUITOS_LOGICOS_1                            = 0;
-    public static int CHSP_LABORATORIO_CIRCUITOS_LOGICOS_1                = 16;
-    public static int CHSP_SISTEMAS_OPERACIONAIS                          = 16;
+    public static int CHSP_LABORATORIO_CIRCUITOS_LOGICOS_1                = 32;
+    public static int CHSP_SISTEMAS_OPERACIONAIS                          = 32;
     public static int CHSP_RESISTENCIA_MATERIAIS_1                        = 0;
     public static int CHSP_METODOLOGIA_CIENTIFICA                         = 0;
     public static int CHSP_TEORIA_TELECOMUNICACOES                        = 0;
     public static int CHSP_MICROPROCESSADORES_MICROCONTROLADORES          = 0;
-    public static int CHSP_LABORATORIO_MICROPROCESSADORES_MICROCONTROLADORES = 16;  
-    public static int CHSP_SISTEMAS_DISTIBUIDOS_1                         = 16;
+    public static int CHSP_LABORATORIO_MICROPROCESSADORES_MICROCONTROLADORES = 32;  
+    public static int CHSP_SISTEMAS_DISTIBUIDOS_1                         = 32;
     public static int CHSP_LINGUAGENS_FORMAIS                             = 0;
     public static int CHSP_DIREITO_ENGENHARIA                             = 0;
     public static int CHSP_CIENCIAS_AMBIENTE                              = 0;
-    public static int CHSP_REDES_COMPUTADORES_1                           = 16;
+    public static int CHSP_REDES_COMPUTADORES_1                           = 32;
     public static int CHSP_ARQUITETURA_COMPUTADORES_1                     = 0;  
-    public static int CHSP_COMPILADORES_1                                 = 16;
-    public static int CHSP_INTELIGENCIA_COMPUTACIONAL                     = 16;
-    public static int CHSP_ENGENHARIA_SOFTWARE_1                          = 16;
+    public static int CHSP_COMPILADORES_1                                 = 32;
+    public static int CHSP_INTELIGENCIA_COMPUTACIONAL                     = 32;
+    public static int CHSP_ENGENHARIA_SOFTWARE_1                          = 32;
     public static int CHSP_ADIMINISTRACAO_EMPRESARIAL                     = 0;
     public static int CHSP_ECONOMIA                                       = 0;
     public static int CHSP_PEQUISA_OPERACIONAL_1                          = 32; 
-    public static int CHSP_COMPUTACAO_GRAFICA                             = 16;
+    public static int CHSP_COMPUTACAO_GRAFICA                             = 32;
     public static int CHSP_ENGENHARIA_ECONOMICA                           = 0;
     public static int CHSP_PROJETO_FINAL_CURSO_1                          = 64;
     public static int CHSP_ESTAGIO_SUPERSIONADO                           = 320;
