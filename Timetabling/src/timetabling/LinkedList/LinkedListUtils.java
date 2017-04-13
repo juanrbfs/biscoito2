@@ -1,10 +1,20 @@
 package timetabling.LinkedList;
 
 public class LinkedListUtils {
-	  public void insertElement(Object elemento) {}
-	  public void insertElement(int posicao, Object elemento) {}
-	  public Cell getElement(int posicao) {return null;}
-	  public void removeElement(int line, int column){}
-	  public int size() {return 0;}
+    
+	  public void insertElement(int line,int column, Cell element) {
+              
+          }
+	  public Cell getElement(int line, int column) {
+              
+              return null;
+          }
+	  public void removeElement(int line, int column){
+          
+          }
+	  public int size() {
+              
+              return 0;
+          }
 	  
 }

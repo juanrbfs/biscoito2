@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package timetabling.LinkedList;
-
 /**
  *
- * @author Aluno
+ * @author PMec Humanoide
  */
-public class NewClass {
-    
+public class TesteLinkedList {
+    public static void main(String[] args) {
+                
+	 }
 }
